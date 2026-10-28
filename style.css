@@ -1,0 +1,192 @@
+/* GENERAL SETTINGS */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  color: #173b64;
+}
+
+/* Y2K LANDSCAPE BACKGROUND */
+.desktop {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    linear-gradient(#a6e5ff55, #ffffff15),
+    linear-gradient(to bottom, #69c5ff 0%, #c9f1ff 55%, #8bd77a 56%, #319b48 100%);
+}
+
+/* WELCOME MESSAGE */
+.welcome {
+  position: relative;
+  z-index: 2;
+  padding: 28px 12px 0;
+  text-align: center;
+  text-shadow: 0 1px white;
+}
+
+.welcome h1 {
+  margin: 8px;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+.welcome-label {
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+}
+
+/* YOUR PORTRAIT */
+.portrait {
+  position: absolute;
+  left: 50%;
+  top: 22%;
+  transform: translateX(-50%);
+  width: min(32vw, 320px);
+  height: 48%;
+  object-fit: contain;
+  object-position: center bottom;
+  z-index: 1;
+}
+
+/* ABOUT ME BUTTON */
+.about-button {
+  position: absolute;
+  top: 74%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  padding: 13px 25px;
+  background: linear-gradient(white, #d7eaff);
+  border: 2px solid #6aa9e8;
+  border-radius: 12px;
+  color: #174c91;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 0 #4784c3;
+}
+
+.about-button:hover {
+  background: #fff3a8;
+}
+
+/* DOCUMENT ICONS */
+.document {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 105px;
+  padding: 10px 5px;
+  border: 1px solid #ffffffdd;
+  border-radius: 10px;
+  background: #ffffffc9;
+  box-shadow: 0 4px 12px #23466a30;
+  color: #173b64;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+.document:hover {
+  transform: translateY(-5px) rotate(-3deg);
+  background: #fff6bf;
+}
+
+.doc-icon {
+  font-size: 32px;
+}
+
+.doc-writing { left: 7%; top: 27%; }
+.doc-thesis { right: 7%; top: 27%; }
+.doc-design { left: 7%; top: 49%; }
+.doc-storyboards { right: 7%; top: 49%; }
+.doc-artwork { left: 19%; top: 67%; }
+
+/* BOTTOM NAVIGATION */
+.bottom-nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 4;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 14px 8px;
+  background: #d9efffdc;
+  border-top: 2px solid white;
+}
+
+.bottom-nav a {
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: #174c91;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.bottom-nav a:hover {
+  background: white;
+}
+
+.desktop-footer {
+  position: absolute;
+  bottom: 65px;
+  width: 100%;
+  text-align: center;
+  font-size: 11px;
+}
+
+/* MOBILE LAYOUT */
+@media (max-width: 600px) {
+  .desktop {
+    min-height: 850px;
+  }
+
+  .portrait {
+    top: 24%;
+    width: 55vw;
+    height: 34%;
+  }
+
+  .about-button {
+    top: 59%;
+  }
+
+  .document {
+    width: 85px;
+    font-size: 11px;
+  }
+
+  .doc-icon {
+    font-size: 27px;
+  }
+
+  .doc-writing { left: 2%; top: 23%; }
+  .doc-thesis { right: 2%; top: 23%; }
+  .doc-design { left: 2%; top: 42%; }
+  .doc-storyboards { right: 2%; top: 42%; }
+  .doc-artwork {
+    left: 50%;
+    top: 65%;
+    transform: translateX(-50%);
+  }
+
+  .bottom-nav {
+    gap: 3px;
+  }
+
+  .bottom-nav a {
+    padding: 9px 6px;
+    font-size: 11px;
+  }
+}
